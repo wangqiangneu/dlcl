@@ -1,0 +1,7 @@
+cffi
+numpy
+torch
+tqdm
+tensorboardX
+tensorflow
+matplotlib
