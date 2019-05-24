@@ -33,6 +33,7 @@ share_embedding=1
 lr=0.002
 warmup=16000
 # token batch size per GPU
+# Smaller if OUT OF MEMORY, but keep batch_size * update_freq = 8192
 batch_size=4096
 # accumulate gradient (equivalent to 4096 * 2 token batch size per GPU)
 update_freq=2
