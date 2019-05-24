@@ -10,6 +10,8 @@ The implementation of [Learning Deep Transformer Models for Machine Translation 
 2. `python setup.py develop`
 3. `python setup.py install`
 
+NOTE: test in `torch==0.4.1`
+
 ## Prepare Training Data
 
 1. Download the preprocessed [WMT'16 En-De dataset](https://drive.google.com/uc?export=download&id=0B_bZck-ksdkpM25jRUN2X2UxMm8) provided by Google to project root dir
