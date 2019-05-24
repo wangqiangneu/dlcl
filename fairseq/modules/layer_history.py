@@ -37,9 +37,6 @@ class BaseLayerHistory(nn.Module):
 
 
 class LearnableDenseLayerHistory(BaseLayerHistory):
-    """
-    x_n = (x_1 + y_1 + y_2 + ... y_{n-1}) / n
-    """
     def __init__(self, args, is_encoder):
         super(LearnableDenseLayerHistory, self).__init__(args, is_encoder)
         self.sum = None

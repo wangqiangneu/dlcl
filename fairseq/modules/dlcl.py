@@ -13,8 +13,10 @@ import numpy as np
 
 
 class DynamicLinearCombination(nn.Module):
-    """
-    x_n = (x_1 + y_1 + y_2 + ... y_{n-1}) / n
+    """Implementation of Dynamic Linear Combination of Layers (DLCL)
+
+        for pre-norm, x_{l+1} = \sum_{k=0}^{l}{W_k^{l+1}LN(y_k)}
+        for post-norm, x_{l+1} = LN(\sum_{k=0}^{l}{W_k^{l+1}y_k})
     """
     def __init__(self, args, is_encoder, include_sublayer=False):
         super(DynamicLinearCombination, self).__init__()
@@ -75,9 +77,23 @@ class DynamicLinearCombination(nn.Module):
 
     def _init(self, layer_num, init_value, weight_type, window_size=-1, learnable=True):
         """
+
+        :param layer_num: total layers
+        :param init_value: initial weight value
+        :param weight_type: granularity of learned weights (scalar, scalar_X, vector)
+        :param window_size: past windows size of layers
+        :param learnable: if allow to learn weights
+        :return:
+            weight_tensor:
+                1. L x L x 1 if weight type='scalar'
+                2. L x L x X if weight type='scalar_X'
+                3. L x L x H if weight type='vector'
+            weight_mask: L x L, 0 means padding
+        """
+        """
             weight shape is:
-             1. L x L for weight type='scalar'
-             2. L x L x G for weight type='group_scalar'
+             1. L x L x 1 for weight type='scalar'
+             2. L x L x X for weight type='scalar_X'
              3. L x L x H for weight type='vector'
              mask shape is L x L
             :return:
