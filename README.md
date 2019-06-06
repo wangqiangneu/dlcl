@@ -1,6 +1,6 @@
 # Learning Deep Transformer Models for Machine Translation on Fairseq
 
-The implementation of [Learning Deep Transformer Models for Machine Translation [ACL 2019] ](todo) (**Qiang Wang**, Bei Li, Tong Xiao, Jingbo Zhu, Changliang Li, Derek F. Wong, Lidia S. Chao)
+The implementation of [Learning Deep Transformer Models for Machine Translation [ACL 2019] ](https://arxiv.org/abs/1906.01787) (**Qiang Wang**, Bei Li, Tong Xiao, Jingbo Zhu, Changliang Li, Derek F. Wong, Lidia S. Chao)
 
 > This code is based on [Fairseq v0.5.0](https://github.com/pytorch/fairseq/tree/v0.5.0)
 
@@ -43,7 +43,7 @@ Model | #Param. |Epoch* | BLEU
 [Transformer](https://arxiv.org/abs/1706.03762) (base) | 65M | 20 | 27.3
 [Transparent Attention](https://arxiv.org/abs/1808.07561) (base, `16L`) | 137M | - | 28.0
 [Transformer](https://arxiv.org/abs/1706.03762) (big) | 213M | 60 | 28.4
-[RNMT+](https://arxiv.org/abs/1804.09849) (big) | 379M | 144 | 28.5
+[RNMT+](https://arxiv.org/abs/1804.09849) (big) | 379M | 25 | 28.5
 [Layer-wise Coordination](https://papers.nips.cc/paper/8019-layer-wise-coordination-between-encoder-and-decoder-for-neural-machine-translation.pdf) (big) | 210M* | - | 29.0
 [Relative Position Representations](https://arxiv.org/abs/1803.02155) (big) | 210M | 60 | 29.2
 [Deep Representation](https://arxiv.org/abs/1810.10181) (big) | 356M | - | 29.2
