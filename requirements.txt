@@ -1,6 +1,6 @@
 cffi
 numpy
-torch==0.4.1
+torch==2.2.0
 tqdm
 tensorboardX
 tensorflow
